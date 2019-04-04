@@ -3,7 +3,7 @@ import { inject } from '@loopback/context';
 import { AuthenticationBindings, UserProfile, authenticate } from '@loopback/authentication';
 
 export class FireController {
-  constructor(@inject(AuthenticationBindings.CURRENT_USER) private user: UserProfile, ) {
+  constructor(@inject(AuthenticationBindings.CURRENT_USER, { optional: true }) private user: UserProfile) {  // * {optional:true} for auth on one endpoint * 
   }
 
   @authenticate('BasicStrategy')  // protecting the /fire endpoint with the 'basic strategy' authentication
