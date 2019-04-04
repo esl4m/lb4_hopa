@@ -1,0 +1,10 @@
+{
+  "name": "testdb",
+  "connector": "mysql",
+  "url": "mysql://root@localhost/lbdemo",
+  "host": "localhost",
+  "port": 8889,
+  "user": "root",
+  "password": "",
+  "database": "lbdemo"
+}
