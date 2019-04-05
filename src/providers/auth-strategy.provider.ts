@@ -42,10 +42,8 @@ export class MyAuthStrategyProvider implements Provider<Strategy | undefined> {
     const user = await this.userRepository.findOne({ where: { username: username } });
     // find user by name & password
     if (user) {
-      console.log(password);
-
+      // console.log(password);
       if (md5(password) == user.password) {
-
         cb(null, user);  // when user is authenticated
       }
     } else {
