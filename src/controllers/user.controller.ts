@@ -1,4 +1,5 @@
 const md5 = require('md5');
+const _ = require('lodash');
 
 import {
   Count,
@@ -37,7 +38,11 @@ export class UserController {
   })
   async create(@requestBody() user: User): Promise<User> {
     user.password = md5(user.password);
-    return await this.userRepository.create(user);
+    user = await this.userRepository.create(user);
+
+    user = _.pick(user, ['_id', 'username']);  // to return only these data and don't return the password.
+
+    return user;
   }
 
   @get('/users/count', {
