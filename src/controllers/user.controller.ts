@@ -1,3 +1,5 @@
+const md5 = require('md5');
+
 import {
   Count,
   CountSchema,
@@ -16,24 +18,25 @@ import {
   del,
   requestBody,
 } from '@loopback/rest';
-import {User} from '../models';
-import {UserRepository} from '../repositories';
+import { User } from '../models';
+import { UserRepository } from '../repositories';
 
 export class UserController {
   constructor(
     @repository(UserRepository)
-    public userRepository : UserRepository,
-  ) {}
+    public userRepository: UserRepository,
+  ) { }
 
   @post('/users', {
     responses: {
       '200': {
         description: 'User model instance',
-        content: {'application/json': {schema: {'x-ts-type': User}}},
+        content: { 'application/json': { schema: { 'x-ts-type': User } } },
       },
     },
   })
   async create(@requestBody() user: User): Promise<User> {
+    user.password = md5(user.password);
     return await this.userRepository.create(user);
   }
 
@@ -41,7 +44,7 @@ export class UserController {
     responses: {
       '200': {
         description: 'User model count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -57,7 +60,7 @@ export class UserController {
         description: 'Array of User model instances',
         content: {
           'application/json': {
-            schema: {type: 'array', items: {'x-ts-type': User}},
+            schema: { type: 'array', items: { 'x-ts-type': User } },
           },
         },
       },
@@ -73,7 +76,7 @@ export class UserController {
     responses: {
       '200': {
         description: 'User PATCH success count',
-        content: {'application/json': {schema: CountSchema}},
+        content: { 'application/json': { schema: CountSchema } },
       },
     },
   })
@@ -88,7 +91,7 @@ export class UserController {
     responses: {
       '200': {
         description: 'User model instance',
-        content: {'application/json': {schema: {'x-ts-type': User}}},
+        content: { 'application/json': { schema: { 'x-ts-type': User } } },
       },
     },
   })
