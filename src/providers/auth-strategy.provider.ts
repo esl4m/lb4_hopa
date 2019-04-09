@@ -1,11 +1,7 @@
 import { repository } from '@loopback/repository';
 import { Provider, inject, ValueOrPromise } from '@loopback/context';
 import { Strategy } from 'passport';
-import {
-  AuthenticationBindings,
-  AuthenticationMetadata,
-  UserProfile,
-} from '@loopback/authentication';
+import { AuthenticationBindings, AuthenticationMetadata, UserProfile, } from '@loopback/authentication';
 import { BasicStrategy } from 'passport-http';
 import { UserRepository } from '../repositories';
 
