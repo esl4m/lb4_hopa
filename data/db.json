@@ -1,6 +1,7 @@
 {
   "ids": {
-    "Hopa": 5
+    "Hopa": 5,
+    "User": 5
   },
   "models": {
     "Hopa": {
@@ -8,6 +9,11 @@
       "2": "{\"title\":\"destroy alderaan\",\"desc\":\"Make sure there are no survivors left!\",\"id\":2}",
       "3": "{\"title\":\"terrorize senate\",\"desc\":\"Tell them they're getting a budget cut.\",\"id\":3}",
       "4": "{\"title\":\"crush rebel scum\",\"desc\":\"Every.Last.One.\",\"id\":4}"
+    },
+    "User": {
+      "1": "{\"_id\":1,\"username\":\"eslam\",\"name\":\"eslamd\",\"password\":\"123456\"}",
+      "2": "{\"_id\":2,\"username\":\"eslam2\",\"name\":\"eslamdiaa2\",\"password\":\"202cb962ac59075b964b07152d234b70\"}",
+      "3": "{\"_id\":3,\"username\":\"esl4m3\",\"name\":\"eslam3\",\"password\":\"202cb962ac59075b964b07152d234b70\"}"
     }
   }
 }
