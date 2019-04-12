@@ -1,21 +1,5 @@
-import {
-  Count,
-  CountSchema,
-  Filter,
-  repository,
-  Where,
-} from '@loopback/repository';
-import {
-  post,
-  param,
-  get,
-  getFilterSchemaFor,
-  getWhereSchemaFor,
-  patch,
-  put,
-  del,
-  requestBody,
-} from '@loopback/rest';
+import { Count, CountSchema, Filter, repository, Where } from '@loopback/repository';
+import { post, param, get, getFilterSchemaFor, getWhereSchemaFor, patch, put, del, requestBody } from '@loopback/rest';
 import { Hopa } from '../models';
 import { HopaRepository } from '../repositories/hopa.repository';
 
